@@ -1,14 +1,85 @@
+@font-face {
+    font-family: 'CustomFont';
+    src: url('../fonts/icomoon/logo.ttf?srf3rx') format('truetype');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    background-color: #262626;
 }
 
 header {
-    background-color: #333;
+    background: linear-gradient(135deg, #F14E95 0%, rgb(130, 2, 102) 100%);
     color: #fff;
-    padding: 20px;
+    padding: 40px 20px;
     text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+header h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease-out, gradient 3s ease infinite;
+    background: linear-gradient(135deg, #ffffff, #c0c0c0);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: clamp(2rem, 5vw, 3rem);
+    }
 }
 
 .gallery {
@@ -21,8 +92,11 @@ header {
 .gallery-item {
     position: relative;
     overflow: hidden;
-    padding-bottom: 100%; /* Square aspect ratio */
+    padding-bottom: 100%;
     height: 0;
+    border: 3px solid #F14E95;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
 }
 
 .gallery-item img {
@@ -32,12 +106,12 @@ header {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
     cursor: pointer;
 }
 
-.gallery-item:hover img {
-    transform: scale(1.1);
+.gallery-item:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
 }
 
 .lightbox {
@@ -54,38 +128,69 @@ header {
 
 .lightbox-content {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100%;
+    width: 100%;
+    position: relative;
 }
 
 #lightbox-image {
-    max-width: 90%;
-    max-height: 90%;
-}
-
-.lightbox-controls {
-    margin-top: 20px;
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+    transition: opacity 0.3s ease;
 }
 
 .control-btn {
-    font-size: 24px;
-    padding: 10px 20px;
-    margin: 0 10px;
+    font-size: clamp(16px, 4vw, 24px);
+    padding: clamp(5px, 2vw, 10px) clamp(10px, 3vw, 20px);
     background-color: transparent;
-    color: #ff69b4;
-    border: 2px solid #ff69b4;
+    color: #F14E95;
+    border: 2px solid #F14E95;
     border-radius: 50%;
     cursor: pointer;
-    transition: all 0.3s ease;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.control-btn:hover {
-    background-color: #ff69b4;
+#prev-btn {
+    left: 20px;
+}
+
+#next-btn {
+    right: 20px;
+}
+
+@media (hover: hover) {
+    .control-btn:hover {
+        background-color: #F14E95;
+        color: #fff;
+    }
+}
+
+.control-btn:active {
+    background-color: #F14E95;
     color: #fff;
-    transform: scale(1.2);
-    box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+}
+
+#lightbox-image {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+    transition: opacity 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .control-btn {
+        font-size: 16px;
+        padding: 5px 10px;
+    }
 }
 
 @media (max-width: 768px) {
