@@ -9,6 +9,28 @@ let currentIndex = 0;
 let touchStartX = 0;
 let touchEndX = 0;
 
+document.addEventListener("DOMContentLoaded", function() {
+    const images = document.querySelectorAll(".gallery-item img");
+    let loadedImages = 0;
+
+    images.forEach(image => {
+        if (image.complete) {
+            incrementLoadedImages();
+        } else {
+            image.addEventListener("load", incrementLoadedImages);
+            image.addEventListener("error", incrementLoadedImages);
+        }
+    });
+
+    function incrementLoadedImages() {
+        loadedImages++;
+        if (loadedImages === images.length) {
+            document.getElementById("loading-animation").style.display = "none";
+        }
+    }
+});
+
+
 galleryItems.forEach((item, index) => {
     item.addEventListener('click', () => {
         currentIndex = index;
@@ -84,3 +106,4 @@ nextBtn.addEventListener('touchend', (e) => {
     e.preventDefault();
     navigateImages(1);
 });
+
