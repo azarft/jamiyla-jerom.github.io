@@ -25,10 +25,11 @@ document.addEventListener("DOMContentLoaded", function() {
     function incrementLoadedImages() {
         loadedImages++;
         if (loadedImages === images.length) {
-            document.getElementById("loading-animation").style.display = "none";
+            document.querySelector(".loading-animation").style.display = "none";
         }
     }
 });
+
 
 
 galleryItems.forEach((item, index) => {

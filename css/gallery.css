@@ -1,40 +1,95 @@
+@font-face {
+    font-family: 'CustomFont';
+    src: url('../fonts/icomoon/logo.ttf?srf3rx') format('truetype');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #262626;
 }
 
-#loading-animation {
+.loading-animation {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(241, 78, 149, 0.8);
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9999;
 }
-
-.loader {
-    border: 16px solid #f3f3f3;
-    border-radius: 50%;
-    border-top: 16px solid #F14E95;
-    width: 120px;
-    height: 120px;
-    animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
+.center{
+    display: flex;
+  } 
+  .back {
+      position: fixed;
+      padding: 0;
+      margin: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+      animation-name: backdiv;
+      animation-duration: 1s; 
+      animation-iteration-count: infinite;
     }
-    100% {
-        transform: rotate(360deg);
+  
+    .heart {
+      position: absolute;
+      margin: auto;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: pink;
+      height: 50px;
+      width: 50px;
+      transform: rotate(-45deg);
+      animation-name: beat;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
     }
-}
-
+    .heart:after {
+      background-color: pink;
+      content: "";
+      border-radius: 50%;
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      top: 0px;
+      left: 25px;
+    }
+    .heart:before {
+      background-color: pink;
+      content: "";
+      border-radius: 50%;
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      top: -25px;
+      left: 0px;
+    }
+  
+    @keyframes backdiv {
+      50% {
+        background: #ffe6f2;
+      }
+    }
+  
+    @keyframes beat {
+      0% {
+        transform: scale(1) rotate(-45deg);
+      }
+      50% {
+        transform: scale(0.6) rotate(-45deg);
+      }
+    }
 header {
     background: linear-gradient(135deg, #F14E95 0%, rgb(130, 2, 102) 100%);
     color: #fff;
@@ -105,6 +160,8 @@ header::before {
         font-size: clamp(2rem, 5vw, 3rem);
     }
 }
+
+
 
 .gallery {
     display: grid;
