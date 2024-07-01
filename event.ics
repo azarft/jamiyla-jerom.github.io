@@ -4,7 +4,7 @@ PRODID:-//hacksw/handcal//NONSGML v1.0//EN
 BEGIN:VEVENT
 UID:uid1@example.com
 DTSTAMP:20240701T080000Z
-ORGANIZER;CN=Organizer Name:MAILTO:oiukjamiyla@gmail.com
+ORGANIZER;CN=Organizer Name:MAILTO:iukjamiyla@gmail.com
 DTSTART:20240804T180000Z
 DTEND:20240804T210000Z
 SUMMARY:Наша свадебная церемония
