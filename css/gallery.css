@@ -56,7 +56,8 @@ body {
       animation-iteration-count: infinite;
     }
     .heart:after {
-      background-color:  rgba(255, 192, 203, 0.5);
+      /* background-color:  rgba(255, 192, 203, 0.5); */
+      background-color:  pink;
       content: "";
       border-radius: 50%;
       position: absolute;
@@ -66,7 +67,7 @@ body {
       left: 25px;
     }
     .heart:before {
-      background-color:  rgba(255, 192, 203, 0.5);
+      background-color:  pink;
       content: "";
       border-radius: 50%;
       position: absolute;
@@ -78,7 +79,7 @@ body {
   
     @keyframes backdiv {
       50% {
-        background: #ffe6f2;
+        background: rgba(255, 230, 242, 0.5);
       }
     }
   
