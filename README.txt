@@ -1,62 +1,26 @@
+# Wedding Website - Jerom & Jamiyla
 
-TITLE: 
-Wedding - 100% Fully Responsive Free HTML5 Bootstrap Template
+This is a custom wedding website created for Jerom and Jamiyla, designed to showcase their special day with style and elegance. The website is built using HTML, CSS, and JavaScript to provide a smooth and engaging experience for visitors.
 
-AUTHOR:
-DESIGNED & DEVELOPED by GetTemplates.co
+## Features
 
-Website: http://gettemplates.co/
-Twitter: http://twitter.com/gettemplatesco
-Facebook: http://facebook.com/gettemplatesco
+- **Responsive Design**: The website is fully responsive, ensuring it looks great on all devices, from desktops to mobile phones.
+- **Image Gallery**: A gallery to showcase beautiful images from the wedding, with a loading animation for each image.
+- **Smooth Scrolling Animations**: Elegant scrolling animations that enhance the visual appeal of the site.
+- **Countdown Timer**: A countdown timer that ticks down to the wedding day.
+- **Contact Form**: A simple contact form for guests to send their well-wishes.
 
+## Technologies Used
 
-CREDITS:
+- **HTML5**: The structure of the website.
+- **CSS3**: Styling and layout of the website, including animations.
+- **JavaScript**: For dynamic functionality like the countdown timer, loading animations, and interactivity.
+## Credit
+ This website was created by Argen as a gift for my sister on her special day.
+## Setup
 
-Bootstrap
-http://getbootstrap.com/
+To run the website locally:
 
-jQuery
-http://jquery.com/
-
-jQuery Easing
-http://gsgd.co.uk/sandbox/jquery/easing/
-
-Modernizr
-http://modernizr.com/
-
-Google Fonts
-https://www.google.com/fonts/
-
-Google Map
-http://maps.google.com/
-
-Icomoon
-https://icomoon.io/app/
-
-Respond JS
-https://github.com/scottjehl/Respond/blob/master/LICENSE-MIT
-
-animate.css
-http://daneden.me/animate
-
-jQuery Waypoint
-https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
-
-Owl Carousel
-http://www.owlcarousel.owlgraphic.com/
-
-jQuery countTo
-http://www.owlcarousel.owlgraphic.com/
-
-Stellar Parallax
-http://markdalgleish.com/projects/stellar.js/
-
-Magnific Popup
-http://dimsemenov.com/plugins/magnific-popup/
-
-SimplyCountDown JS
-http://vincentloy.github.io/simplyCountdown.js/
-
-Demo Images:
-http://unsplash.com
-
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/azarft/jerom-jamiyla.github.io.git
